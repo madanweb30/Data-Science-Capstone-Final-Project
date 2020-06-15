@@ -1,0 +1,48 @@
+---
+title: "Coursera’s Data Science Capstone Final Project"
+author: "Madan Mohan Kumar"
+date: "15/06/2020"
+output:
+  ioslides_presentation: default
+  slidy_presentation: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Overview of the Project
+
+The purpose of the project is to create text-prediction application with R Shiny package that predicts words using a natural language processing model i.e. creating an application based on a predictive model for text.
+The goal of the project is to build a predictive text model combined with a shiny app UI that will predict the next word as the user types a sentence similar to the way most smart phone keyboards are implemented today using the technology of Swiftkey.
+
+[Shiny App] - [https://madanweb30.shinyapps.io/Data-Science-Capstone-Final-Project/]
+
+[Github Repo] - [https://github.com/madanweb30/Data-Science-Capstone-Final-Project]
+
+## Getting & Cleaning the Data
+
+Before building the word prediction algorithm, data are first processed and cleaned as steps below:
+
+- A subset of the original data was sampled from the three sources (blogs,twitter and news) which is then merged into one.
+- Next, data cleaning is done by conversion to lowercase, strip white space, and removing punctuation and numbers.
+- The corresponding n-grams are then created (Quadgram,Trigram and Bigram).
+- Next, the term-count tables are extracted from the N-Grams and sorted according to the frequency in descending order.
+- Lastly, the n-gram objects are saved as R-Compressed files (.RData files)
+- The prediction model uses the principles of tidy data applied to text mining in R
+
+
+## Word Prediction Model
+Explanation of the next word prediction flow is as below:
+
+- Compressed data sets containing descending frequency sorted n-grams are first loaded.
+- User input words are cleaned in the similar way as before prior to prediction of the next word.
+- For prediction of the next word, Quadgram is first used (first three words of Quadgram are the last three words of the user provided sentence).
+- If no Quadgram is found, back off to Trigram (first two words of Trigram are the last two words of the sentence).
+- If no Trigram is found, back off to Bigram (first word of Bigram is the last word of the sentence)
+- If no Bigram is found, back off to the most common word with highest frequency 'the' is returned.
+
+## Shiny Application
+A Shiny application was developed based on the next word prediction model described previously as shown below.
+
+![some caption](shinyApp.jpg)

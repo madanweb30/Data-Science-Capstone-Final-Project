@@ -1,0 +1,10 @@
+name: Publish Document
+title:
+username:
+account: rpubs
+server: rpubs.com
+hostUrl: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/627944/342f5b3c70614df09e1d91e47ce3831c
+bundleId: https://api.rpubs.com/api/v1/document/627944/342f5b3c70614df09e1d91e47ce3831c
+url: http://rpubs.com/madanweb30/627944
+when: 1592228765.06591
